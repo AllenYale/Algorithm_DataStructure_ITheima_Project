@@ -20,7 +20,9 @@ public class BinarySearch {
     public static int binarySearchBasic(int target, int[] arr) {
         int i = 0, j = arr.length - 1;
         while (i <= j) {
-            int m = (i + j) / 2;
+//            int m = (i + j) / 2;
+            //使用无符号右移，不会有两个大数相加符号变负数的问题
+            int m = (i + j) >>> 1;
             if (arr[m] == target) {
                 return m;
             } else if (arr[m] < target) {
